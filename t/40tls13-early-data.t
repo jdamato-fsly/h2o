@@ -66,7 +66,7 @@ subtest "http/2" => sub {
             "\x00\x00@{[chr length $hpack]}\x01\x05\x00\x00\x00\x01$hpack", # HEADERS
         );
         # do not wait for idle-timeout
-        sleep 3;
+        sleep 4;
         kill 'KILL', $pid;
         open $fh, "<", "$tempdir/resp.txt"
             or die "failed to open file:$tempdir/resp.txt:$!";
